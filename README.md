@@ -82,6 +82,13 @@ How can a student use this programming language right away?
 ```
 #A more in depth script for the CSCE 2017 Texas A&M catalog:
 
+courseload CSCE_ALGORITHMS_TRACK has
+  CSCE411
+  CSCE433
+  CSCE440
+  CSCE442
+end
+
 courseload CSCE_SYSTEMS_TRACK has
   CSCE410
   CSCE456
@@ -92,11 +99,25 @@ courseload CSCE_SYSTEMS_TRACK has
   CSCE469
 end
 
-courseload CSCE_ALGORITHMS_TRACK has
-  CSCE411
-  CSCE433
-  CSCE440
-  CSCE442
+courseload CSCE_SOFTWARE_TRACK has
+  CSCE431
+  CSCE434
+  CSCE435
+  CSCE438
+  CSCE451
+end
+
+courseload CSCE_INFORMATION_TRACK has
+  CSCE310
+  CSCE420
+  CSCE436
+  CSCE441
+  CSCE443
+  CSCE444
+  CSCE445
+  CSCE452
+  CSCE470
+  CSCE421
 end
 
 courseload SEVENTH_COURSE has
@@ -104,9 +125,8 @@ courseload SEVENTH_COURSE has
   ENGR385
   ENGR270
   ENGR470
+  CSCE482
 end
-
-#... explicitly give more
 
 #notice how we use the clause "of"
 courseload CSCE_UPPER_TRACK has
@@ -118,13 +138,28 @@ courseload CSCE_UPPER_TRACK has
     CSCE_ALGORITHMS_TRACK
   end
   
-  1 of CSCE_SYSTEMS_TRACK
+  1 of CSCE_SYSTEMS_TRACK #works like a wildcar
   1 of CSCE_SOFTWARE_TRACK
   1 of CSCE_INFORMATION_TRACK
   2 of ALL_UPPER_TRACK
   3 credits of ALL_UPPER_TRACK or 1 of SEVENTH_COURSE
   CSCE411
 end
+
+now the user can play around to find the best combination of classeS:
+
+courseload MY_COURSE_LOAD has
+  CSCE411
+  CSCE465
+  CSCE441
+  CSCE421
+  CSCE431
+  CSCE434
+  CSCE482
+end
+
+# this should return
+ MY_COURSE_LOAD is CSCE_UPPER_TRACK
 
 ```
 
