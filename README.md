@@ -52,7 +52,7 @@ courseload NEW_MAJOR is CSCE_MAJOR - CORE
 
 ```
 
-What about planning out a semester once we have a coursework? Well, remember our previous course declaration
+## Declaring the relations of prereq, and requisite classes, this most be used before putting them in a courseload
 ```
 #I wrote down the second year fo Texas A&M computer science:
 
@@ -77,11 +77,9 @@ end
 
 ```
 
-How can a student use this programming language right away?
+##A more in depth script for the CSCE 2017 Texas A&M catalog:
 
 ```
-#A more in depth script for the CSCE 2017 Texas A&M catalog:
-
 courseload CSCE_ALGORITHMS_TRACK has
   CSCE411
   CSCE433
@@ -146,7 +144,7 @@ courseload CSCE_UPPER_TRACK has
   CSCE411
 end
 
-now the user can play around to find the best combination of classeS:
+#now the user can play around to find the best combination of classeS:
 
 courseload MY_COURSE_LOAD has
   CSCE411
