@@ -8,15 +8,15 @@ We can declare classes and their respective relationships as follows:
 #in this block we define all the relationships between classes
 
 # we can use one-liner for simple associations
-class CSCE221(3) is PREREQ for CSCE431
+class CSCE221(3) is prereq for CSCE431
 
 #another one-liner
-class CSCE315(3), CSCE221(3) are PREREQ for CSCE431
+class CSCE315(3), CSCE221(3) are prereq for CSCE431
 
 #or we can build them in this fashion which may be more readable
 class CSCE315(3) has
-  CSCE221(3) as COREQ
-  CSCE121(3) as PREREQ
+  CSCE221(3) as coreq
+  CSCE121(3) as prereq
 end
 
 ```
@@ -41,3 +41,51 @@ end
 courseload NEW_MAJOR is CSCE_MAJOR - CORE
 
 ```
+
+What about planning out a semester once we have a coursework? Well, remember our previous class declaration
+```
+class CSCE315(3) has
+  CSCE221(3) as coreq
+  CSCE121(3) as prereq
+end
+
+#nested implementation
+
+CSCE315(3) has
+  CSCE221(3) as coreq
+  CSCE121(3) as prereq
+end
+
+
+#I wrote down the second year fo Texas A&M computer science:
+
+class PROGRAMMING_COURSE(3)
+
+class CSCE121(4) has
+  PROGRAMMING_COURSE(3) as prereq
+end
+
+class CSCE121(1)
+
+class CSCE222(3), ECEN222(3) has
+  MATH151 as prereq
+end
+
+class MATH304(3) has
+  MATH148 or MATH152 or MATH172 as prereq
+  JUNIOR
+end
+
+#TODO: how are we going to fill in things like science courses electives
+
+```
+
+How can a student use this programming language right away?
+
+
+
+How will this language facilitate planning compared to a flowchart?
+
+
+
+
