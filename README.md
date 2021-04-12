@@ -30,10 +30,20 @@ courseload CORE has
   ...
 end
 
+courseload CSCE_SYSTEMS_ELECTIVES has
+  CSCE410
+  CSCE456
+  CSCE462
+  CSCE463
+  CSCE464
+  CSCE465
+  CSCE469
+END
+
 #we can also create a coursework using another course work as base, look at CORE below:
-courseload CSCE_MAJOR has
+courseload CSCE has
   CORE
-  CSCE121
+  CSCE121  
   ...
 end
 
@@ -69,10 +79,48 @@ end
 
 How can a student use this programming language right away?
 
+```
+#A more in depth script for the CSCE 2017 Texas A&M catalog:
 
+courseload CSCE_SYSTEMS_ELECTIVES has
+  CSCE410
+  CSCE456
+  CSCE462
+  CSCE463
+  CSCE464
+  CSCE465
+  CSCE469
+END
+
+#notice how we use the clause "of"
+courseload CSCE has
+  CORE
+  #... basic classes
+  
+  #major coursework:
+  1 of CSCE_SYSTEMS_ELECTIVES
+  1 of CSCE_SOFTWARE_ELECTIVES
+  1 of CSCE_INFORMATION_ELECTIVES
+  
+  3 of CSCE_SYSTEMS_ELECTIVES + CSCE_SOFTWARE_ELECTIVES + CSCE_INFORMATION_ELECTIVES
+  
+  CSCE411
+  ...
+end
+
+```
 
 How will this language facilitate planning compared to a flowchart?
 
 
 
+```
+#repeats will result in an error, like so:
 
+courseload CSCE_SYSTEMS_ELECTIVES has
+  CSCE410
+  CSCE410
+END
+
+
+```
