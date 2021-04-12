@@ -27,13 +27,17 @@ We can declare a coursework like this
 courseload CORE has
   GOVT101
   GOVT102
-  ....
+  ...
 end
 
 #we can also create a coursework using another course work as base, look at CORE below:
 courseload CSCE_MAJOR has
   CORE
   CSCE121
+  ...
 end
+
+#in the following, NEW_MAJOR keeps all the classes from CSCE_MAJOR without the CORE classes 
+courseload NEW_MAJOR is CSCE_MAJOR - CORE
 
 ```
