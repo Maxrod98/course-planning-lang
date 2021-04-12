@@ -8,10 +8,10 @@ We can declare classes and their respective relationships as follows:
 #in this block we define all the relationships between classes
 
 # we can use one-liner for simple associations
-class CSCE221(3) is prereq for CSCE431
+class CSCE221(3) is prereq for CSCE431(3)
 
 #another one-liner
-class CSCE315(3), CSCE221(3) are prereq for CSCE431
+class CSCE315(3), CSCE221(3) are prereq for CSCE431(3)
 
 #or we can build them in this fashion which may be more readable
 class CSCE315(3) has
