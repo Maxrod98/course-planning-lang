@@ -158,7 +158,7 @@ courseload MY_COURSE_LOAD has
   CSCE482
 end
 
-# this should return
+# this should return true
  MY_COURSE_LOAD is CSCE_UPPER_TRACK
 
 ```
