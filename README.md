@@ -44,19 +44,6 @@ courseload NEW_MAJOR is CSCE_MAJOR - CORE
 
 What about planning out a semester once we have a coursework? Well, remember our previous class declaration
 ```
-class CSCE315(3) has
-  CSCE221(3) as coreq
-  CSCE121(3) as prereq
-end
-
-#nested implementation
-
-CSCE315(3) has
-  CSCE221(3) as coreq
-  CSCE121(3) as prereq
-end
-
-
 #I wrote down the second year fo Texas A&M computer science:
 
 class PROGRAMMING_COURSE(3)
